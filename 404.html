@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/">
+    <script>
+      var path = location.pathname + location.search + location.hash
+      if (path !== '/' && path !== '/index.html') {
+        location.replace('/?path=' + encodeURIComponent(path))
+      } else {
+        location.replace('/')
+      }
+    </script>
   </head>
   <body>
     <p>Redirecting…</p>
